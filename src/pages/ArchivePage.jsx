@@ -55,6 +55,7 @@ const ArchivePage = () => {
         { id: 22, year: 2021, title: "Weather App (old)", madeAt: "_", builtWith: "react", link: "https://vigilant-wright-d74474.netlify.app/" },
         { id: 23, year: 2023, title: "Pixel Gallery", madeAt: "_", builtWith: "react, api", link: "https://mkpixels.netlify.app/" },
         { id: 24, year: 2023, title: "Online Resume", madeAt: "_", builtWith: "Html, Css, Javascript", link: "https://mkhembrom.github.io/online_resume/" },
+        { id: 25, year: 2022, title: "Url Shortened", madeAt: "_", builtWith: "Next.js", link: "https://shorturl-theta.vercel.app/" },
     ])
 
 

@@ -9,6 +9,7 @@ import windbnb from "../assets/projects/windbnb.png";
 import NotFound from "../assets/projects/404-NOT-FOUND.png";
 import snake from "../assets/projects/snake.png";
 import onlineresume from "../assets/projects/resume.png";
+import shorturl from "../assets/projects/shorturl.png";
 
 
 export const projectData = [
@@ -99,6 +100,14 @@ export const projectData = [
         "link": "https://mkhembrom.github.io/online_resume/",
         "github": "https://github.com/mkhembrom/online_resume",
         "projectType": "javascript"
+    },
+    {
+        "id": 11,
+        "picture": shorturl,
+        "name": "Shortened Url",
+        "link": "https://shorturl-o251q7cey-mkhembrom.vercel.app/",
+        "github": "https://github.com/mkhembrom/shorturl",
+        "projectType": "react"
     },
 
 ]
