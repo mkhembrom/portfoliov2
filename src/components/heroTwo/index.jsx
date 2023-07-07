@@ -38,17 +38,17 @@ const HeroTwo = () => {
                     </div>
                     <div className='overflow-hidden'>
                         <motion.h1
-                            initial={{ opacity: 0, y: -100 }}
-                            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: -100 }}
+                            initial={{ opacity: 0, y: -200 }}
+                            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: -200 }}
                             transition={{
-                                duration: 1
+                                duration: 0.8
                             }}
                             className={'text-3xl md:text-6xl font-semibold my-2 md:my-5 ' + `${theme === 'light' ? 'text-[#0B192E]' : 'text-[#CDD7F6]'}`}>Manjesh Hembrom.</motion.h1>
                     </div>
                     <div className='overflow-hidden h-full'>
                         <motion.h1
-                            initial={{ opacity: 0, y: 100 }}
-                            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 100 }}
+                            initial={{ opacity: 0, y: 200 }}
+                            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 200 }}
                             transition={{
                                 duration: 0.8
                             }}
@@ -62,9 +62,43 @@ const HeroTwo = () => {
                         transition={{
                             duration: 5
                         }}
-                        className={'text-md mt-5 md:w-2/3 leading-7 w-full ' + `${theme === 'light' ? 'text-[#849dc9]' : 'text-[#8892b0]'}`}>I’m a software engineer specializing in building (and occasionally designing) exceptional digital experiences.</motion.p>
+                        className={'text-md mt-5 md:w-2/3 leading-7 w-full ' + `${theme === 'light' ? 'text-[#849dc9]' : 'text-[#8892b0]'}`}>I’m a software engineer specializing in building (and occasionally designing) web and mobile app.</motion.p>
 
-                    <div className='flex space-x-8 my-10 flex-row justify-start w-full'>
+                    <div className='flex space-x-8 my-10 flex-row justify-start w-full overflow-hidden p-2'>
+                        <motion.div
+                            initial={{ opacity: 0, y: 200 }}
+                            animate={inView ? { opacity: 1, y: 0 } : { opacity: 1, y: 200 }}
+                            transition={{
+                                duration: 0.5
+                            }}
+                            className='dark:bg-[#FF0063] bg-blue-600 translate-x-2'>
+                            <button
+                                onClick={() => window.open('/manjesh_hembrom.pdf')}
+                                className='
+                                px-[2rem] 
+                                py-[1rem]
+                                text-blue-600 
+                                dark:text-[#FF0063] 
+                                border 
+                                border-blue-600 
+                                dark:border-[#FF0063]
+                               -translate-x-2
+                               -translate-y-2
+                                hover:translate-x-0
+                                hover:translate-y-0
+                                transition-all
+                                dark:bg-[#0B192E]
+                                bg-[#F7F7F7]
+                                leading-6
+                                tracking-wider
+                                '>
+                                Resume
+                            </button>
+                        </motion.div>
+                    </div>
+                    {/* <div className='flex space-x-8 my-10 flex-row justify-start w-full'>
+                        
+                        
                         <motion.a
                             href='https://www.linkedin.com/in/manjesh-hembrom/'
                             target='_blank'
@@ -87,7 +121,9 @@ const HeroTwo = () => {
                             className={`cursor-pointer text-[#849dc9] ${theme === "light" ? 'hover:text-blue-600' : 'hover:text-[#FF0063]'}`}>
                             <FaGithub size={30} />
                         </motion.a>
-                    </div>
+
+                        
+                    </div> */}
 
                 </div>
                 <motion.div
@@ -107,7 +143,7 @@ const HeroTwo = () => {
                         dark:text-[#FF0063]
                         w-full
                         absolute
-                        bottom-10 
+                        bottom-20 
                         left-0 
                         right-0 
                         cursor-pointer

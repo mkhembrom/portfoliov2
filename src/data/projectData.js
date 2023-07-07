@@ -8,6 +8,7 @@ import cat from "../assets/projects/cat.png";
 import windbnb from "../assets/projects/windbnb.png";
 import NotFound from "../assets/projects/404-NOT-FOUND.png";
 import snake from "../assets/projects/snake.png";
+import onlineresume from "../assets/projects/resume.png";
 
 
 export const projectData = [
@@ -89,6 +90,14 @@ export const projectData = [
         "name": "Snake Game",
         "link": "https://mksnake.netlify.app/",
         "github": "https://github.com/mkhembrom/snake-game",
+        "projectType": "javascript"
+    },
+    {
+        "id": 10,
+        "picture": onlineresume,
+        "name": "Online Resume",
+        "link": "https://mkhembrom.github.io/online_resume/",
+        "github": "https://github.com/mkhembrom/online_resume",
         "projectType": "javascript"
     },
 

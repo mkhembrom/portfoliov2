@@ -31,14 +31,14 @@ const ArchivePage = () => {
     }
 
     const [archive, setArchive] = useState([
-        { id: 1, year: 2021, title: "Weather app", madeAt: "_", builtWith: "react, styled-component ", link: "/" },
-        { id: 2, year: 2021, title: "Random Quote Generator", madeAt: "_", builtWith: "Javascript", link: "https://mkquote.netlify.app/" },
-        { id: 3, year: 2021, title: "Windbnb", madeAt: "_", builtWith: "react", link: "https://mkhembrom.github.io/windbnb/" },
+        { id: 1, year: 2021, title: "Weather app", madeAt: "devchallanges", builtWith: "react, styled-component ", link: "#" },
+        { id: 2, year: 2021, title: "Random Quote Generator", madeAt: "devchallanges", builtWith: "Javascript", link: "https://mkquote.netlify.app/" },
+        { id: 3, year: 2021, title: "Windbnb", madeAt: "devchallanges", builtWith: "react", link: "https://mkhembrom.github.io/windbnb/" },
         { id: 4, year: 2022, title: "Grandiose Art Gallary", madeAt: "Luxeveda", builtWith: "vue . gridsome . wordpress", link: "https://grandioseart.com/" },
         { id: 5, year: 2022, title: "Buymyev", madeAt: "Luxeveda", builtWith: "vue . nuxt . stripe", link: "https://indibike.in/" },
-        { id: 6, year: 2022, title: "Cat Wiki", madeAt: "_", builtWith: "react . ", link: "https://catmk.netlify.app/" },
-        { id: 7, year: 2022, title: "Todo", madeAt: "_", builtWith: "react . redux ", link: "https://mkstodo.netlify.app/" },
-        { id: 8, year: 2022, title: "404 Not Found", madeAt: "_", builtWith: "tailwindcss", link: "https://mkhembrom.github.io/404-NOT_FOUND/" },
+        { id: 6, year: 2022, title: "Cat Wiki", madeAt: "devchallanges", builtWith: "react . ", link: "https://catmk.netlify.app/" },
+        { id: 7, year: 2022, title: "Todo", madeAt: "devchallanges", builtWith: "react . redux ", link: "https://mkstodo.netlify.app/" },
+        { id: 8, year: 2022, title: "404 Not Found", madeAt: "devchallanges", builtWith: "tailwindcss", link: "https://mkhembrom.github.io/404-NOT_FOUND/" },
         { id: 9, year: 2023, title: "Message Box", madeAt: "icodethis", builtWith: "tailwindcss", link: "https://icodethis.com/submissions/10892" },
         { id: 10, year: 2023, title: "News Letter List", madeAt: "icodethis", builtWith: "tailwindcss", link: "https://icodethis.com/submissions/11025" },
         { id: 11, year: 2023, title: "Order Place", madeAt: "icodethis", builtWith: "tailwindcss", link: "https://icodethis.com/submissions/11225" },
@@ -54,6 +54,7 @@ const ArchivePage = () => {
         { id: 21, year: 2023, title: "Links Section 2", madeAt: "icodethis", builtWith: "tailwindcss", link: "https://icodethis.com/submissions/12405" },
         { id: 22, year: 2021, title: "Weather App (old)", madeAt: "_", builtWith: "react", link: "https://vigilant-wright-d74474.netlify.app/" },
         { id: 23, year: 2023, title: "Pixel Gallery", madeAt: "_", builtWith: "react, api", link: "https://mkpixels.netlify.app/" },
+        { id: 24, year: 2023, title: "Online Resume", madeAt: "_", builtWith: "Html, Css, Javascript", link: "https://mkhembrom.github.io/online_resume/" },
     ])
 
 
@@ -109,7 +110,7 @@ const ArchivePage = () => {
                 <div className='grid md:hidden grid-cols-2 sm:grid-cols-3 gap-4 mt-10 pb-20'>
 
                     {
-                        archive.sort((a, b) => a.year <= b.year ? 1 : -1).map((item) => (
+                        archive.sort((a, b) => (a.year <= b.year && a.id < b.id) ? 1 : -1).map((item) => (
                             <a href={item.link} key={item.id} className='flex flex-col items-start justify-start p-2 w-full h-32 border-2 border-[#849DC9] dark:border-[#CDD6F7] rounded-md '>
                                 <div className='flex items-center justify-between w-full'>
                                     <BiSolidFolder className='text-[#849DC9] dark:text-[#CDD6F7] text-2xl' />

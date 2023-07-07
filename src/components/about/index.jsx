@@ -23,7 +23,7 @@ const About = () => {
         "Flutter",
         "Node.js",
         "Javascript (ES6+)",
-        "Dart",
+        "Express",
         "Java",
 
     ]
@@ -109,9 +109,11 @@ const About = () => {
                             }
                         </div>
 
-                        <div className={`flex w-[200px] mt-10 md:w-1/3 border  ${theme === 'light' ? 'bg-blue-600 border-blue-600' : 'bg-[#FF0063] border-[#FF0063]'}`}>
-                            <img className={`-translate-x-2 -translate-y-2 bg-red-200 border  hover:translate-y-0 hover:translate-x-0 transition-all brightness-50 hover:brightness-100 ${theme === 'light' ? ' border-blue-600' : ' border-[#FF0063]'}`} src={avatar} />
-                        </div>
+                        {
+                            inView && <div className={`flex w-[200px] my-10 md:w-1/3 border  ${theme === 'light' ? 'bg-blue-600 border-blue-600' : 'bg-[#FF0063] border-[#FF0063]'}`}>
+                                <img className={`-translate-x-2 -translate-y-2 bg-red-200 border  hover:translate-y-0 hover:translate-x-0 transition-all brightness-50 hover:brightness-100 ${theme === 'light' ? ' border-blue-600' : ' border-[#FF0063]'}`} src={avatar} />
+                            </div>
+                        }
                     </div>
                     <AnimatePresence>
                         <motion.div

@@ -13,9 +13,10 @@ const Project = () => {
         threshold: 0
     })
 
+    const [more, setMore] = useState(0);
 
 
-    const [active, setActive] = useState("all");
+    const [active, setActive] = useState("react");
 
     const [projectItem, setProjectItem] = useState([]);
 
@@ -23,11 +24,12 @@ const Project = () => {
 
     useEffect(() => {
         setProjectItem(projectData);
-        setFilterProject(projectData)
+        const filterProjectData = projectData.slice(0, 8);
+        setFilterProject(filterProjectData)
     }, [])
 
     const allProject = () => {
-        const filtered = projectItem.filter((item) => item);
+        const filtered = projectItem;
         setFilterProject(filtered);
         setActive("all");
     }
@@ -48,6 +50,8 @@ const Project = () => {
         setActive("vue");
 
     }
+
+
 
     const projectBtn = [
         {
@@ -106,16 +110,14 @@ const Project = () => {
 
                                 return <motion.div
                                     key={item.id}
-                                    initial={{ opacity: 0, y: 20, scale: 0.8 }}
-                                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                                    exit={{ opacity: 0, scale: 0 }}
+                                    initial={{ opacity: 0, }}
+                                    animate={{ opacity: 1, }}
                                     transition={{
-                                        duration: 0.3
+                                        duration: 0.5
                                     }}
                                     layout
 
                                     className='
-                                    
                                 cursor-pointer
                                 rounded-xl 
                                 h-[200px]
@@ -136,8 +138,8 @@ const Project = () => {
 
                                     </div>
                                     <div className='absolute bottom-0 left-0 right-0 p-4 flex items-center justify-between'>
-                                        <motion.a href={item.github} target='_blank' initial={{ scale: 0, y: -40 }} animate={{ scale: 0.8, y: 0 }} whileHover={{ scale: 1.1 }} className={'text-sm uppercase rounded-md px-4 py-1  text-transparent group-hover:text-white group-hover:border-2 ' + `${theme === "light" ? 'hover:bg-blue-600 hover:border-blue-600' : 'hover:bg-[#FF0063] hover:border-[#FF0063]'}`}>code</motion.a>
-                                        <motion.a href={item.link} target='_blank' initial={{ scale: 0, y: -40 }} animate={{ scale: 0.8, y: 0 }} whileHover={{ scale: 1.1 }} className={'text-sm uppercase rounded-md px-4 py-1  text-transparent group-hover:text-white group-hover:border-2 ' + `${theme === "light" ? 'hover:bg-blue-600 hover:border-blue-600' : 'hover:bg-[#FF0063] hover:border-[#FF0063]'}`}>Live</motion.a>
+                                        <motion.a href={item.github} target='_blank' initial={{ scale: 0, y: -40 }} animate={{ scale: 1, y: 0 }} whileHover={{ scale: 1.1 }} className={'text-md md:text-sm uppercase rounded-md px-4 py-1  text-transparent group-hover:text-white group-hover:border-2 ' + `${theme === "light" ? 'hover:bg-blue-600 hover:border-blue-600' : 'hover:bg-[#FF0063] hover:border-[#FF0063]'}`}>code</motion.a>
+                                        <motion.a href={item.link} target='_blank' initial={{ scale: 0, y: -40 }} animate={{ scale: 1, y: 0 }} whileHover={{ scale: 1.1 }} className={'text-md md:text-sm uppercase rounded-md px-4 py-1  text-transparent group-hover:text-white group-hover:border-2 ' + `${theme === "light" ? 'hover:bg-blue-600 hover:border-blue-600' : 'hover:bg-[#FF0063] hover:border-[#FF0063]'}`}>Live</motion.a>
                                     </div>
                                 </motion.div>
 
@@ -146,6 +148,8 @@ const Project = () => {
                     </AnimatePresence>
 
                 </motion.div>
+
+
                 <div className='flex items-center justify-center w-full '>
                     <div className='flex flex-col items-center mt-16'>
                         <h1 className='text-2xl text-center py-4 text-black dark:text-[#CDD6F7]'>Other Noteworthy Projects</h1>
