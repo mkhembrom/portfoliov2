@@ -36,15 +36,19 @@ const HeroTwo = () => {
                             }} className={
                                 'text-md  font-bold leading-3 py-2	tracking-wider ' + `${theme === 'light' ? 'text-blue-600' : 'text-[#FF0063]'}`}>Hi, my name is</motion.h1>
                     </div>
+
                     <div className='overflow-hidden'>
                         <motion.h1
                             initial={{ opacity: 0, y: -200 }}
-                            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: -200 }}
+                            animate={inView ? { opacity: 1, y: 0 } : { opacity: 1, y: -200 }}
                             transition={{
                                 duration: 0.8
                             }}
-                            className={'text-3xl md:text-6xl font-semibold my-2 md:my-5 ' + `${theme === 'light' ? 'text-[#0B192E]' : 'text-[#CDD7F6]'}`}>Manjesh Hembrom.</motion.h1>
+                            className={`text-3xl md:text-6xl font-semibold overflow-hidden  md:my-5 ${theme === 'light' ? 'text-[#0B192E]' : 'text-[#CDD7F6]'}`}>
+                            Manjesh Hembrom.
+                        </motion.h1>
                     </div>
+
                     <div className='overflow-hidden h-full'>
                         <motion.h1
                             initial={{ opacity: 0, y: 200 }}

@@ -3,7 +3,7 @@ import { useContext } from 'react'
 import { ThemeContext } from '../../context/theme'
 import TimelineItem from './timelineitem'
 import { useState } from 'react'
-import avatar from '../../assets/images/manjesh.jpg';
+import avatar from '../../assets/images/manjesh1.jpg';
 import { RiArrowRightSFill } from 'react-icons/ri';
 import { useInView } from 'react-intersection-observer';
 import { AnimatePresence, motion } from 'framer-motion'
