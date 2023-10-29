@@ -1,33 +1,27 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useCallback, useEffect, useState } from "react";
 
 export const ModelContext = createContext();
 
 export const ModelContextProvider = ({ children }) => {
+  const [toggleModel, setToggleModel] = useState(false);
 
-    const [toggleModel, setToggleModel] = useState(false);
+  const callback = useCallback(() => {
+    if (toggleModel) {
+      document.body.classList.add("stop-scrolling");
+    } else {
+      document.body.classList.remove("stop-scrolling");
+    }
+  }, [toggleModel]);
 
+  useEffect(() => {
+    window.addEventListener("scroll", callback);
 
+    return () => window.removeEventListener("scroll", callback);
+  }, [callback]);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            if (toggleModel) {
-                document.body.classList.add("stop-scrolling");
-            } else {
-                document.body.classList.remove("stop-scrolling");
-            }
-        }
-        window.addEventListener('mouseover', handleScroll);
-
-        return () => window.removeEventListener('mouseover', handleScroll);
-    }, [toggleModel])
-
-
-    return (
-        <ModelContext.Provider
-            value={{ toggleModel, setToggleModel }}
-        >
-            {children}
-        </ModelContext.Provider>
-    );
-}
-
+  return (
+    <ModelContext.Provider value={{ toggleModel, setToggleModel }}>
+      {children}
+    </ModelContext.Provider>
+  );
+};
